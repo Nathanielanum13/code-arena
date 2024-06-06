@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diff DOM</title>
+    <script src="./diffDOM.js" defer></script>
+    <script type="module" defer>
+        const dd = new diffDOM.DiffDOM()
+
+        const el1 = document.querySelector("#el1")
+        const el2 = document.querySelector("#el2")
+
+        const diff = dd.diff(el1, el2)
+        console.log(diff, 'Difference between el1 and el2')
+
+        dd.apply(el1, diff)
+    </script>
+</head>
+<body>
+    <p id="el1">This is my element A</p>
+    <p id="el2">This is my element B</p>
+</body>
+</html>

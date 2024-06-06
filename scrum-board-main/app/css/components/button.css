@@ -1,0 +1,42 @@
+
+button:focus-visible {
+    outline: none;
+}
+button.scrum-btn {
+    font-family: var(--heading-normal-family);
+    font-weight: bolder;
+    font-size: .75rem;
+    padding: .75rem 1.75rem;
+    border: 1px solid var(--muted);
+    border-radius: 3px;
+    box-shadow: 0 0 .5rem .05rem #ffffff10;
+    cursor: pointer;
+}
+button.scrum-btn.dark {
+    background-color: var(--darker-color);
+    color: #ffffff;
+    border: none;
+}
+button.scrum-btn.dark:hover {
+    background-color: var(--darker-muted);
+    transition: all .25s ease;
+}
+button.scrum-btn.dark:not(:hover) {
+    transition: all .5s ease;
+}
+button.scrum-btn.danger {
+    background-color: var(--danger);
+    color: #ffffff;
+    border: none;
+}
+button.scrum-btn.danger:hover {
+    background-color: var(--darker-color);
+    transition: all .25s ease;
+}
+button.scrum-btn.danger:not(:hover) {
+    transition: all .5s ease;
+}
+.create {
+    float: right;
+    margin-right: .25rem;
+}

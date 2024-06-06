@@ -1,0 +1,28 @@
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    aspect-ratio: 1;
+    border: 2px solid red;
+}
+
+.black-box {
+    display: flex;
+    justify-content: center;  
+    background-color: black;
+    width: 100px;
+    aspect-ratio: 1;
+}

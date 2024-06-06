@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Snap</title>
+    <style>
+        *, ::after, ::before {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .container {
+            height: 100vh;
+            overflow: hidden scroll;
+        }
+        .container.snap-scroll {
+            scroll-snap-type: y mandatory;
+        }
+        section {
+            height: 100vh;
+            font-size: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            scroll-snap-align: start;
+        }
+        section {
+            font-weight: bold;
+        }
+        section span {
+            background-color: #80808020;
+            margin-left: 1rem;
+            padding: .25rem 1rem;
+            border-radius: .25rem;
+            color: #161616;
+        }
+        .bg-color-bisque {
+            background-color: bisque;
+        }
+        .bg-color-white {
+            background-color: white;
+        }
+        .bg-color-burlywood {
+            background-color: rgb(25, 226, 209);
+        }
+    </style>
+</head>
+<body>
+    <div class="container snap-scroll">
+        <section class="bg-color-bisque">Section <span>1</span></section>
+        <section class="bg-color-white">Section <span>2</span></section>
+        <section class="bg-color-burlywood">Section <span>3</span></section>
+    </div>
+    <script>
+        let container = document.querySelector('.container');
+        let lastScrollTop = 0;
+        
+        container.addEventListener('scroll', checkScrollDirection)
+
+        function checkScrollDirection(event) {
+            let currentPosition = container.scrollTop;
+            if (currentPosition > lastScrollTop){
+                // On scroll down
+                container.classList.add('snap-scroll')
+            } else {
+                // On scroll up
+                container.classList.remove('snap-scroll')
+            }
+            lastScrollTop = currentPosition <= 0 ? 0 : currentPosition;
+        }
+
+        function checkScrollDirectionIsUp(event) {
+            if (event.wheelDelta) {
+                return event.wheelDelta > 0;
+            }
+            return event.deltaY < 0;
+        }  
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+## move tarball to opt folder
+sudo tar -xvzf [WebStorm-2021.3.tar.gz] -C /opt
+
+## Change permissions on a locked opt folder
+sudo chmod 777 -R /opt/
+
+## Setting up nginix locally
+1. Install nginx
+ - sudo apt update
+ - sudo apt install nginx
+ 
+2. Start|Stop|Restart|Reload|Disable nginx using
+ - sudo systemctl [start|stop|restart|reload|disable] nginx
+ 
+3. Postgres connection
+ - sudo -u postgres psql
+
+3. Setting up a project on linode
+ - Database environment should be set
+ - Create a directory on the linode server and pull your project into it
+ - Do your docker configuration setup - ( If any )
+ - Set up project on kong (Connection between the cl)
+ 	> Set up Services
+ 	> Set up Targets
+ 	
+ 
+ 	
+

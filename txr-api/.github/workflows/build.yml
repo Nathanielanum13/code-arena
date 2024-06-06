@@ -1,0 +1,42 @@
+name: txr build
+
+permissions:
+  contents: write
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16
+          registry-url: https://npm.pkg.github.com/
+          
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Login to Github Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+        
+      - name: Dockerize and Push to Registry
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          file: ./Dockerfile
+          tags: ghcr.io/txr-project/txr-api/api:${{github.ref_name}}

@@ -1,0 +1,16 @@
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+}
+p {
+    line-height: 1.5;
+}
+.title {
+    font-family: var(--heading-family);
+}
+.text {
+    color: var(--dark-muted);
+}
+hr {
+    margin: 1rem 0 0 0;
+    border: 1px solid #57575780;
+}

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scrum Board</title>
+    <link rel="stylesheet" href="app/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;900&family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <script src="app/js/index.js" type="module" defer></script>
+</head>
+
+<body>
+    <header class="scrum-board-header">
+        <div class="header-body">
+            <h1 class="header-title title">Tasks</h1>
+            <p class="header-text text">
+                Here is a list of all your project tasks. Feel free to add more, edit existing ones and move them when done.
+            </p>
+        </div>
+        <div class="toggler">
+            <input type="checkbox" id="dark-light-toggle">
+            <label for="dark-light-toggle">
+                <span class="day">D</span>
+                <span class="night">N</span>
+                <span class="ball"></span>
+            </label>
+        </div>
+        <button class="scrum-btn dark" id="create-button">Create task</button>
+    </header>
+    <div class="scrum-board-content">
+        <div class="tab todo-tab">
+            <div class="tab-header">
+                <div class="tab-header-title title">To Do <span class="tab-ring primary"></span></div>
+                <p class="tab-header-text text" id="todo-count">0 Tasks</p>
+                <hr>
+            </div>
+            <div class="tab-body" area="todo" id="todo-body"></div>
+        </div>
+        <div class="tab in-progress-tab">
+            <div class="tab-header">
+                <div class="tab-header-title title">In Progress <span class="tab-ring warning"></span></div>
+                <p class="tab-header-text text" id="in-progress-count">0 Tasks</p>
+                <hr class="hr">
+            </div>
+            <div class="tab-body" area="in-progress" id="in-progress-body">
+            </div>
+        </div>
+        <div class="tab on-hold-tab">
+            <div class="tab-header">
+                <div class="tab-header-title title">On Hold <span class="tab-ring danger"></span></div>
+                <p class="tab-header-text text" id="on-hold-count">0 Tasks</p>
+                <hr class="hr">
+            </div>
+            <div class="tab-body" area="on-hold" id="on-hold-body"></div>
+        </div>
+        <div class="tab done-tab">
+            <div class="tab-header">
+                <div class="tab-header-title title">Done <span class="tab-ring success"></span></div>
+                <p class="tab-header-text text" id="done-count">0 Tasks</p>
+                <hr class="hr">
+            </div>
+            <div class="tab-body" area="done" id="done-body"></div>
+        </div>
+    </div>
+    <div class="scrum-create-new-task" id="create-new-task">
+        <div class="create-task-container">
+            <div class="close-button" id="close-button">&UpTeeArrow;</div>
+            <form class="scrum-form" id="create-task-form">
+                <input type="text" placeholder="Add Title" id="task-title">
+                <textarea name="description" id="task-description" cols="30" rows="5" placeholder="Add Description"></textarea>
+                <button class="scrum-btn danger create" type="submit">Create</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

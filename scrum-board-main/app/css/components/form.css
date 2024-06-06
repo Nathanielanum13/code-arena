@@ -1,0 +1,47 @@
+.scrum-form {
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+    margin: 1rem 0;
+}
+textarea,
+input {
+    width: 100%;
+    padding: .75rem 1rem;
+    border: 1px solid #80808040;
+    background-color: var(--muted);
+    margin-bottom: .75rem;
+    outline: none;
+    border-radius: .25rem;
+    font-size: 1rem;
+    transform: scale(.99);
+    color: var(--dark-color);
+    font-family: var(--default-family);
+}
+textarea:hover,
+textarea:focus,
+input:hover,
+input:focus {
+    transform: scale(1);
+    transition: all .25s ease;
+    outline: none;
+}
+input:hover,
+input:focus {
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid var(--danger);
+}
+textarea:hover,
+textarea:focus {
+    border: none;
+    border-radius: 0;
+    border-top: 2px solid var(--danger);
+}
+input::placeholder,
+input {
+    font-weight: bolder;
+}
+textarea::placeholder {
+    font-family: var(--default-family);
+}

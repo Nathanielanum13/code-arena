@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observer</title>
+    <script src="main.js"></script>
+    <style>
+        ::after, ::before {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 2rem;
+        }
+
+        #alerts {
+            position: fixed;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .alert {
+            border: 1px solid;
+            padding: 1rem;
+            z-index: 10;
+            background-color: aliceblue;
+            display: flex;
+            align-items: center;
+        }
+
+        .alert span {
+            font-weight: bold;
+            margin-left: 1rem;
+            border-radius: 50%;
+            width: 2rem !important;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #808080;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="alert">My name is Nathaniel, what is your name? <span id="alert-close">x</span></div> -->
+    <h1>Welcome to Mutation Kingdom</h1>
+    <div id="response-message"></div>
+    <br>
+    <button id="button">Change response message</button>
+    <div id="alerts"></div>
+</body>
+</html>

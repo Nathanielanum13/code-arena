@@ -1,0 +1,31 @@
+meta {
+  name: Create application
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3010/application
+  body: json
+  auth: none
+}
+
+headers {
+  traceid: 4455fc94-317f-4a78-80fb-9bb012c49799
+}
+
+body:json {
+  [
+    {
+      "name": "Transaction Processor",
+      "contact": [
+        {
+          "name": "Nathaniel Anum Adjah",
+          "email": "nathanielanum13@gmail.com",
+          "phone": "233509131631",
+          "type": "PRIMARY"
+        }
+      ]
+    }
+  ]
+}

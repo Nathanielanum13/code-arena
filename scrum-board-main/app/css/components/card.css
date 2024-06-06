@@ -1,0 +1,82 @@
+.card {
+    width: 100%;
+    height: auto;
+    padding: .5rem 1rem;
+    border-radius: 0 0 .25rem .25rem;
+    margin-bottom: 1rem;
+    transition: all .25s ease;
+}
+.card:not(:hover) {
+    transition: all .5s ease;
+}
+.card:hover {
+    background-color: var(--muted);
+    transition: all .25s ease;
+}
+.card.todo:hover {
+    border-top: 2px solid var(--primary);
+}
+.card.in-progress:hover {
+    border-top: 2px solid var(--warning);
+}
+.card.on-hold:hover {
+    border-top: 2px solid var(--danger);
+}
+.card.done:hover {
+    border-top: 2px solid var(--success);
+}
+.card:hover .ship-to-next {
+    background-color: var(--muted-light);
+}
+.card:hover .remove {
+    color: var(--danger);
+    background-color: transparent !important;
+    font-weight: bold;
+}
+.card.done:hover .remove {
+    color: var(--success);
+}
+.card > .card-title {
+    padding: .25rem 0;
+    font-weight: bolder;
+    color: var(--darker-color);
+    cursor: move;
+}
+.card > .card-title > span.move {
+    float: right;
+    margin: auto;
+    font-weight: bolder;
+}
+.card > .card-text {
+    margin-top: .25rem;
+}
+.card > .ship-to-next {
+    display: inline-block;
+    margin: .75rem 0;
+    padding: .25rem .75rem;
+    background-color: var(--muted);
+    border-radius: .05rem;
+    cursor: pointer;
+    transition: all .25s ease;
+    font-weight: normal;
+}
+.card > .remove {
+    padding: .25rem .75rem;
+    background-color: var(--danger);
+    color: #ffffff;
+    border-radius: .05rem;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+.card > .remove.only {
+    display: inline-block;
+    margin: .75rem 0;
+    background-color: var(--success);
+}
+.ship-to-next:hover {
+    background-color: var(--light) !important;
+    transition: all .25s ease;
+}
+.card > .card-footer {
+    margin: .5rem 0;
+}

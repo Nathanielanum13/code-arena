@@ -1,0 +1,23 @@
+.scrum-board-content {
+    display: flex;
+    align-items: stretch;
+}
+.tab {
+    flex: 1 0 calc(100% / 4);
+}
+.tab-header {
+    padding: .5rem 1.5rem;
+}
+.tab-header > .tab-header-text {
+    margin-top: .25rem;
+}
+.tab-header > .tab-header-title {
+    font-size: 16px;
+}
+.tab-body {
+    width: 100%;
+    height: calc(100vh - 13rem);
+    overflow: hidden scroll;
+
+    padding: .5rem;
+}

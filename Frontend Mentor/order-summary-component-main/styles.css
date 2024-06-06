@@ -1,0 +1,227 @@
+/* ------------ TABLE OF CONTENT ------------ */
+/* 1. Variables ----------------------------- */
+/* 2. Resets -------------------------------- */
+/* 3. Globals ------------------------------- */
+/* 4. Card ---------------------------------- */
+/* 4. Button -------------------------------- */
+/* 5. Utility ------------------------------- */
+/* 6. Media Queries ------------------------- */
+
+
+
+/* 1. Variables ----------------------------- */
+:root {
+    --primary-clr: hsl(245, 75%, 52%);
+    --primary-clr-hover: hsl(245, 75%, 52%, .7);
+    --lt-primary-clr: hsl(225, 100%, 94%);
+    --ltr-primary-clr: hsl(225, 100%, 97%);
+    --neutral-clr: hsl(224, 23%, 55%);
+    --lt-neutral-clr: hsl(225, 100%, 98%);
+    --dark-clr: hsl(223, 47%, 23%);
+    --muted: hsl(224, 23%, 50%);
+
+    --sm: .25;
+    --md: calc(var(--sm) * 2);
+    --lg: calc(var(--md) * 4);
+    --xlg: calc((var(--lg) * 2) + (var(--md) * 2));
+
+    --spacing-sm: calc(var(--sm) * 1rem);
+    --spacing-md: calc(var(--md) * 1rem);
+    --spacing-lg: calc(var(--lg) * 1rem);
+    --spacing-xlg: calc(var(--xlg) * 1rem);
+
+    --mobile-viewport: 375px;
+    --desktop-viewport: 1440px;
+}
+
+/* 2. Resets -------------------------------- */
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+/* 3. Globals ------------------------------- */
+body {
+    height: 100vh;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--dark-clr);
+
+    background-color: var(--lt-primary-clr);
+    background-image: url("./images/pattern-background-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 50%;
+
+    display: grid;
+    place-items: center;
+}
+
+a {
+    color: var(--primary-clr);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--primary-clr-hover);
+}
+
+a.muted-link {
+    text-decoration: none;
+    color: var(--muted);
+    display: block;
+    font-weight: 900;
+}
+
+a.muted-link:hover {
+    color: var(--dark-clr);
+}
+
+
+/* 4. Card ---------------------------------- */
+.card-container {
+    width: clamp(var(--mobile-viewport) - var(--spacing-lg), (100% / 3) - 5vw, 500px);
+    background-color: var(--lt-neutral-clr);
+    border-radius: var(--spacing-lg);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30% auto;
+    overflow: hidden;
+    box-shadow:  0 var(--spacing-lg) var(--spacing-lg) hsl(245 75% 52% / .05);
+}
+
+.card-container .image-section figure {
+    height: 100%;
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main-section {
+    padding: clamp(var(--spacing-lg) - var(--spacing-md), (var(--spacing-lg) / 3) + 1vw, 5rem)
+    clamp(var(--spacing-lg) - var(--spacing-md), (var(--spacing-lg) - var(--spacing-md)) + 1vw, 5rem);
+    text-align: center;
+}
+
+.main-section p {
+    margin-block: calc(var(--spacing-lg) - var(--spacing-md));
+    color: var(--muted);
+}
+
+.main-section .payment-plan {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding-inline:  calc(var(--spacing-lg) - var(--spacing-md));
+    background-color: var(--ltr-primary-clr);
+    border-radius: calc(var(--spacing-lg) / 2);
+    gap: calc((var(--spacing-lg) / 3) + 1vw)
+}
+
+.payment-plan img {
+    max-width: 100%;
+}
+
+.payment-plan p {
+    margin-top: var(--spacing-sm);
+}
+
+.payment-plan > *:first-child,
+.payment-plan > *:last-child {
+    flex-grow: 0;
+    width: max-content;
+}
+
+.payment-plan > .plan {
+    flex-grow: 1;
+    width: max-content;
+    text-align: left;
+    /*padding-inline: clamp(var(--spacing-lg) / 2, var(--spacing-lg) - var(--spacing-md), var(--spacing-lg));*/
+}
+
+.payment-plan > .plan > h2 {
+    margin-top: calc(var(--spacing-md) + var(--spacing-sm));
+    font-size: clamp(var(--spacing-md) + var(--spacing-sm), (var(--spacing-md) + var(--spacing-sm)) + 1vw, var(--spacing-lg) / 2.5);
+}
+
+
+/* 4. Button -------------------------------- */
+.button {
+    width: 100%;
+    padding: calc(var(--spacing-lg) / 2);
+    border-radius: calc(var(--spacing-lg) / 3);
+    font-weight: 700;
+    background-color: var(--primary-clr);
+    color: var(--lt-neutral-clr);
+    font-size: 1.05rem;
+    outline: none;
+    border: 0;
+    box-shadow:  0 var(--spacing-lg) var(--spacing-lg) hsl(245 75% 52% / .1);
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.button:hover {
+    background-color: var(--primary-clr-hover);
+}
+
+
+
+/* 5. Utility ------------------------------- */
+.fw-700 {
+    font-weight: 700;
+}
+.fw-900 {
+    font-weight: 900;
+}
+.mt-1 {
+    margin-top: calc(var(--spacing-lg) / 2);
+}
+.mt-2 {
+    margin-top: var(--spacing-lg);
+}
+.mb-1 {
+    margin-bottom: calc(var(--spacing-lg) / 2);
+}
+.mb-2 {
+    margin-bottom: var(--spacing-lg);
+}
+.px-md {
+    padding-inline: var(--spacing-md);
+}
+.see {
+    border: 1px solid red;
+}
+
+
+/* 6. Media Queries ------------------------- */
+@media screen and (max-width: 375px) {
+    body {
+        background-image: url("./images/pattern-background-mobile.svg");
+        background-size: 100% 25%;
+        height: 100%;
+        padding-top: calc(var(--spacing-lg) / 2);
+    }
+    .attribution {
+        margin-block: var(--spacing-lg);
+    }
+    .mb-sm-2 {
+        margin-bottom: var(--spacing-lg);
+    }
+}
+
+@media screen and (max-height: 715px) {
+    body {
+        height: 100%;
+        padding-top: calc(var(--spacing-lg) / 2);
+    }
+    .attribution {
+        margin-block: var(--spacing-lg);
+    }
+}

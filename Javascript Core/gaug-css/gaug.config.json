@@ -1,0 +1,9 @@
+{
+    "class.prefix": "nt",
+    "class.separator": "-",
+    "class.space-separator": "_",
+    "class.overrides": [
+
+    ],
+    "data.media.prefix": "data-media-"
+}

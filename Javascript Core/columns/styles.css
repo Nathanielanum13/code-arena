@@ -1,0 +1,22 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+html, body {
+    height: 100vh;
+    width: 100%;
+    background: antiquewhite;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Ubuntu;
+    gap: 2rem;
+}
+.wrap {
+    column-count: 3;
+    column-gap: 5rem;
+    column-rule: greenyellow;
+}

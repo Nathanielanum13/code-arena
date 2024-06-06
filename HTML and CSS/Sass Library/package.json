@@ -1,0 +1,16 @@
+{
+  "name": "sass-library",
+  "version": "1.0.0",
+  "description": "A css library for great dashboard UI design",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nathaniel Anum Adjah",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.50.0"
+  }
+}

@@ -1,0 +1,86 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: system-ui;
+    background-color: #80808020;
+}
+
+body .container {
+    width: max(50%, 50rem);
+    background-color: #fff;
+    border-radius: .75rem;
+    padding: 2rem;
+    border: 1px solid #80808005;
+    box-shadow: 0 0 1rem #00000005;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% auto;
+    gap: 2rem;
+}
+
+.container .container-header {
+    background-color: #0066ff;
+    color: #fff;
+    border-radius: .5rem;
+    padding: 2rem;
+}
+
+.container .container-content,
+.container .container-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+input {
+    width: calc(100% / 4);
+    border: 1px solid #80808050;
+    border-radius: 1rem;
+    outline: 0;
+    padding: 1rem;
+    font-size: 4rem;
+    font-family: system-ui;
+    transition: all .5s ease;
+    text-align: center;
+}
+
+input:last-child {
+    flex-grow: 1;
+}
+
+input:disabled {
+    background-color: #0066ff;
+    color: #fff;
+}
+
+input:disabled::placeholder {
+    color: #ffffff50;
+}
+
+input::placeholder {
+    color: #80808020;
+}
+
+input:focus {
+    border: 1px solid #0066ff6c;
+    background-color: #0066ff10;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+    margin: 0; 
+}
+
+/* Utility */
+.see {
+    border: 1px solid red;
+}

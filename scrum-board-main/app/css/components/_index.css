@@ -1,0 +1,31 @@
+@import url("header.css");
+@import url("content.css");
+@import url("button.css");
+@import url("card.css");
+@import url("create-new-task.css");
+@import url("form.css");
+@import url("toggler.css");
+.tab-ring {
+    width: .5rem;
+    aspect-ratio: 1 / 1;
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin: auto .5rem;
+}
+
+.tab-ring.primary {
+    border-color: var(--primary);
+}
+
+.tab-ring.danger {
+    border-color: var(--danger);
+}
+
+.tab-ring.warning {
+    border-color: var(--warning);
+}
+
+.tab-ring.success {
+    border-color: var(--success);
+}

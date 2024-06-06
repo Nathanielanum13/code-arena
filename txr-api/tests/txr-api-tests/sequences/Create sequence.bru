@@ -1,0 +1,55 @@
+meta {
+  name: Create sequence
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3010/sequence
+  body: json
+  auth: none
+}
+
+headers {
+  traceid: 4455fc94-317f-4a78-80fb-9bb012c49799
+}
+
+body:json {
+  {
+    "app_id": "e00af237-b238-4405-a084-e8e9621c5ddb",
+    "frequency": "*/20 * * * * *",
+    "description": "log to file",
+    "jobs": [
+      {
+        "id": "~1",
+        "to": "~2",
+        "type": "429e92ee-13d9-4311-945b-f4f367e33bd5",
+        "options": {
+          "ssl": false,
+          "host": "139.162.242.134",
+          "port": 5432,
+          "user": "cash_management",
+          "query": "SELECT * FROM customer_sites",
+          "client": "postgresql",
+          "database": "cash_management",
+          "password": "cash_management",
+          "connection_string": ""
+        }
+      },
+      {
+        "id": "~2",
+        "to": "",
+        "type": "d6f54d6f-dbe7-483b-b57f-9c401c361652",
+        "options": {
+          "url": "https://webhook.site/d4ee86f3-2347-4e8e-b9b6-fbfc6b1dcdf7",
+          "body": "$PREV_OUTPUT[?(@.authorization_status==0)]",
+          "method": "POST",
+          "headers": {
+            "Content-Type": "application/json",
+            "traceid": "ee2e1fe3-65d7-496a-9911-1062d74a70df"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+<h1>Welcome Home</h1>
+<hr>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur distinctio harum, sed ducimus voluptates optio eligendi beatae ipsam vel commodi?</p>
+<hr>
+<h3>Get Started</h3>
+<hr>
+<button hx-get="/get-users"
+    hx-trigger="click"
+    hx-target="#users-container"
+    hx-swap="innerHTML"
+>
+    Fetch all system users
+</button>
+<hr>
+<button hx-delete="/account" hx-confirm="Are you sure?">
+    Delete My Account
+</button>
+<div id="users-container"></div>

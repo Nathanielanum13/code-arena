@@ -1,0 +1,67 @@
+.scrum-create-new-task {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: -200%;
+    z-index: 10;
+    background-color: hsla(0, 0%, 0%, .75);
+    backdrop-filter: blur(1rem) brightness(.9);
+    border-bottom: 2px solid hsla(0, 0%, 0%, 0.7);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.scrum-create-new-task.t-body {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+}
+.create-task-container {
+    width: 50%;
+    height: 70%;
+    position: relative;
+    padding: 2rem;
+
+}
+.close-button {
+    width: 3.5rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: var(--danger);
+    color: #ffffff;
+    font-size: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    left: 50%;
+    top: -5%;
+    transform: translateX(-50%);
+    cursor: pointer
+}
+
+.close-button:hover {
+    background-color: var(--dark-color);
+    transition: all .25s ease;
+}
+
+.intro {
+    animation: intro .5s ease 1 forwards;
+}
+.extro {
+    animation: extro .5s ease 1 forwards;
+}
+
+@keyframes intro {
+    to {
+        top: 0
+    }
+}
+@keyframes extro {
+    from {top: 0}
+    to {
+        top: -200%
+    }
+}

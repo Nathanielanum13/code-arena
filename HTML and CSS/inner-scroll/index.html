@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="sketch" id="sketch">
+            Hello
+        </div>
+    </div>
+    <script>
+        const target = document.getElementById('sketch');
+        const targetContainer = document.getElementById('container');
+        let clickCount = 0;
+        let isHolding = false;
+        let lastClickTime = 0;
+        const doubleClickThreshold = 300;
+
+        let startPoint = {
+            x: 0,
+            y: 0
+        }
+
+        target.addEventListener('mousedown', (event) => {
+            const now = Date.now();
+            if (now - lastClickTime < doubleClickThreshold) {
+                clickCount = 0;
+                isHolding = true;
+
+                // console.log(targetContainer.offsetLeft)
+
+                startPoint = {
+                    x: (event.clientX - targetContainer.offsetLeft),
+                    y: (event.clientY - targetContainer.offsetTop)
+                }
+                
+                console.log('Double click and hold started');
+            } else {
+                clickCount = 1;
+            }
+
+            lastClickTime = now;
+        });
+
+        document.addEventListener('mousemove', (event) => {
+            if (isHolding) {
+
+                let rootStyle = getComputedStyle(document.documentElement);
+
+                let left = rootStyle.getPropertyValue('--left').trim();
+                let top = rootStyle.getPropertyValue('--top').trim();
+
+                if (left.includes("%") || top.includes("%")) {
+                    if (left.includes("%")) left = (parseInt(left.split("%")[0]) / 100 * targetContainer.clientWidth)
+                    if (top.includes("%")) top = (parseInt(top.split("%")[0]) / 100 * targetContainer.clientHeight)
+                } else if (left.includes("px") || top.includes("px")) {
+                    if (left.includes("px")) left = parseInt(left.split("px")[0])
+                    if (top.includes("px")) top = parseInt(top.split("px")[0])
+                } else {
+                    left = parseInt(left)
+                    top = parseInt(top)
+                }
+
+                const nextPoint = {
+                    x: (event.clientX - targetContainer.offsetLeft),
+                    y: (event.clientY - targetContainer.offsetTop)
+                }
+
+                document.documentElement.style.setProperty('--left', `${left + nextPoint.x - startPoint.x}px`);
+                document.documentElement.style.setProperty('--top', `${top + nextPoint.y - startPoint.y}px`);
+
+                startPoint = nextPoint
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (isHolding) {
+                console.log('Double click, hold and drag ended');
+                isHolding = false;
+            }
+            clickCount = 0;
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+meta {
+  name: Create Site
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:5566/fetch
+  body: json
+  auth: none
+}
+
+headers {
+  traceid: ad26575e-bd62-4a52-9cbe-5b2dc7bc4e44
+}
+
+body:json {
+  {
+    "name": "Simple Site",
+    "head": {
+      "link[src='localhost:5566/style.css']": ""
+    },
+    "body": {
+      "div.foo.bar.mar#a[data-foo='what.css'][data-nathaniel='henry']": "My name is Nathaniel",
+      "ul": {
+        "li": "Nathaniel"
+      },
+      "h1#foo": {
+        "span": "Call me Nat",
+        "innerHTML": " Hello Foo",
+        "innerText": "Pardon me"
+      },
+      "button": {
+        "innerHTML": "Nathaniel",
+        "onClick": "alert('Hello')"
+      }
+    }
+  }
+}

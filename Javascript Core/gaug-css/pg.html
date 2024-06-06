@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaug</title>
+    <style>
+        *, ::after, ::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        section {
+            width: 50%;
+        }
+
+        #results-content {
+            font-family: 'Courier New', Courier, monospace;
+            padding: 1rem;
+        }
+
+        .results {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .results #results-content,
+        .results .docs {
+            height: 50%;
+            overflow: hidden auto;
+        }
+    </style>
+    <script src="js/beautify.min.js"></script>
+    <script src="js/beautify-css.min.js"></script>
+    <script src="js/beautify-html.min.js"></script>
+    <script src="js/monaco/min/vs/loader.js"></script>
+</head>
+<body>
+    <section class="playground">
+        <div id="container" style="width :100%; height: 100vh;"></div>
+    </section>
+    <section class="results">
+        <iframe srcdoc="" allow="application/json" id="results-iframe" width="300" height="200" style="border:1px solid black; display: none;"></iframe>
+        <pre id="results-content" style="width: 100%;"></pre>
+        <div class="docs"></div>
+    </section>
+    <script>
+        const results = document.getElementById("results-iframe")
+        const content = document.getElementById("results-content")
+        
+        require.config({
+            paths: { vs: "js/monaco/min/vs" }
+        });
+        require(["vs/editor/editor.main"], function () {
+            var editor = monaco.editor.create(document.getElementById("container"), {
+                value: 
+                    '<!DOCTYPE html>' + '\n' +
+                    '<html lang="en">' + '\n' +
+                    '<head>' + '\n' +
+                    '\t' + '<meta charset="UTF-8">' + '\n' +
+                    '\t' + '<meta name="viewport" content="width=device-width, initial-scale=1.0">' + '\n' +
+                    '\t' + '<title>Document</title>' + '\n' +
+                    '<\/head>' + '\n' +
+                    '<body>' + '\n' +
+                    '' + '\n' +
+                    '<\/body>' + '\n' +
+                    '<\/html>',
+                    // '',
+                language: "html",
+                automaticLayout: true,
+                theme: 'vs-dark'
+            });
+
+            editor.onDidChangeModelContent(() => {
+                const editorCode = editor.getValue() + '\n' + '<script src="js/gaug.js" type="module"><\/script>';
+                results.setAttribute("srcdoc", editorCode)
+            });
+
+            window.addEventListener("message", (event) => {
+                if (event.data !== "" && content) {
+                    content.innerText = css_beautify(typeof event.data === "string" ? event.data : "", {
+                        "indent_size": "4",
+                        "indent_char": " ",
+                        "max_preserve_newlines": "5",
+                        "preserve_newlines": false,
+                        "keep_array_indentation": false,
+                        "break_chained_methods": false,
+                        "indent_scripts": "normal",
+                        "brace_style": "collapse",
+                        "space_before_conditional": true,
+                        "unescape_strings": false,
+                        "jslint_happy": false,
+                        "end_with_newline": false,
+                        "wrap_line_length": "0",
+                        "indent_inner_html": true,
+                        "comma_first": false,
+                        "e4x": false,
+                        "indent_empty_lines": false
+                    })
+                }
+            })
+        });
+    </script>
+</body>
+</html>

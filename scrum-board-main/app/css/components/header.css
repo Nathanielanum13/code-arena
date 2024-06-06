@@ -1,0 +1,18 @@
+.scrum-board-header {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    padding: 1.5rem;
+}
+.scrum-board-header > .header-body > .header-title {
+    font-size: 2rem;
+}
+.scrum-board-header > .header-body > .header-text {
+    padding: .25rem;
+    margin-top: .25rem;
+    width: 45ch;
+}

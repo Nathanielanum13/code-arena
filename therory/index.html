@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therory</title>
+    <link rel="stylesheet" href="/dist/style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        main {
+            padding: 2rem;
+            width: min(100%, 500px);
+            height: 350px;
+            border: 2px solid #80808030;
+            border-radius: .5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <gp-base-input label="Username" type="email" placeholder="Enter valid mail" size="large" required></gp-base-input>
+        <gp-base-input label="Password" type="password" placeholder="e.g 123456" size="large" required></gp-base-input>
+    </main>
+    
+
+    <script type="module">
+        import { register } from "/dist/wc@input.mjs"
+        register()
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const payload = {
+                "name": "Simple Site",
+                "head": {
+                    "link[src='localhost:5566/style.css']": ""
+                },
+                "body": {
+                    "div.foo.bar.mar#a[data-foo='what.css'][data-nathaniel='henry']": "My name is Nathaniel",
+                    "ul": [
+                        {
+                            "li": {
+                                "innerText": "Dede",
+                                "span": [
+                                    {
+                                        "h1": "Hello",
+                                        "ul": [
+                                            {
+                                                "li": {
+                                                    "innerText": "Dede",
+                                                    "span[style='color: red']": [
+                                                        {
+                                                            "h1": "Hello"
+                                                        },
+                                                        {
+                                                            "h1": "Pretty"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "h1": "Pretty"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "li": "Francis"
+                        }
+                    ],
+                    "h1#foo": {
+                        "span": "Call me Nat",
+                        "innerHTML": " Hello Foo",
+                        "innerText": " Pardon me"
+                    },
+                    "button": {
+                        "innerHTML": "Nathaniel",
+                        "onClick": "alert('Hello')"
+                    }
+                }
+            }
+            const response = await fetch("http://localhost:5566/build", {
+                method: "POST",
+                body: JSON.stringify(payload),
+                headers: {
+                    "traceid": "ad26575e-bd62-4a52-9cbe-5b2dc7bc4e44",
+                    "Content-Type": "application/json"
+                }
+            })
+
+            const data = await response.text()
+            document.documentElement.innerHTML = data
+
+        })
+    </script>
+</head>
+
+<body>
+    <div>loading...</div>
+</body>
+
+</html>

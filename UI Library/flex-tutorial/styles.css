@@ -1,0 +1,31 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+main, aside {
+    height: 100vh;
+}
+aside {
+    flex: 0 0 15rem;
+}
+main {
+    flex: 1 1 auto;
+    background-color: #80808020;
+}
+.see {
+    border: 1px solid red;
+}
+
+@media screen and (max-width: 1000px) {
+    aside {
+        display: none;
+    }
+    main {
+        background-color: red;
+    }
+}

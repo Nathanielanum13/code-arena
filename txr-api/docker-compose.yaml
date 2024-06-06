@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  txr-api:
+    # image: ghcr.io/txr-project/txr-api/api:v0.0.4 # Production
+    build: # Development
+      context: .
+      dockerfile: Dockerfile
+    network_mode: host
+    volumes: # Development
+      - ./:/txr-api/
+    environment:
+      - TXR_PORT=3010
+      - TXR_ENVIRONMENT=production
+      - TXR_APP_VERSION=1.0
+      - TXR_DB_USERNAME=nathaniel
+      - TXR_DB_PASSWORD=nathaniel
+      - TXR_DB_NAME=txr
+    command: ["bun", "run", "--watch", "./index.ts"]

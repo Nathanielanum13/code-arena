@@ -1,0 +1,51 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: bisque;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: clamp(300px, calc(40% + 5vw), 700px);
+    min-height: 20rem;
+    border: 1px solid #80808020;
+    border-radius: .25rem;
+    background-color: #fff;
+
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: scroll hidden;
+    scroll-snap-type: x mandatory;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.apps-group {
+    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.apps-group .app {
+    width: calc(100% / 3);
+    height: calc(100% / 2);
+}
+
+.see {
+    border: 1px solid red;
+}

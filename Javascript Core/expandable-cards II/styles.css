@@ -1,0 +1,103 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+html, body {
+    height: 100vh;
+    width: 100%;
+    background: antiquewhite;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Ubuntu;
+    gap: 2rem;
+}
+.container {
+    padding: 2rem;
+    border: 1px solid #80808020;
+    box-shadow: 0 0 1rem #00000005;
+    border-radius: 1rem;
+    width: 40rem;
+    height: 30rem;
+    background: #ffffff;
+}
+.collapsible-container {
+    width: 100%;
+    height: max-content;
+    position: relative;
+}
+.collapsible {
+    width: 100%;
+    height: max-content;
+    padding: .75rem 1rem;
+    animation: all ease .75s;
+    position: relative;
+}
+.collapsible summary {
+    padding: 1rem 1.75rem;
+    border-radius: .25rem;
+    background: #80808020;
+    font-weight: bold;
+    font-size: 1rem;
+    border-bottom: 1px solid #80808010;
+}
+.collapsible p {
+    background: #80808010;
+    padding: 1.5rem 2rem 2rem 2rem;
+    border-radius: 0 0 .5rem .5rem;
+    color: #808080;
+    line-height: 1.5;
+    height: 11.75rem;
+    overflow: hidden;
+    transition: all .25s ease;
+}
+.collapsible p.can-scroll {
+    overflow: hidden scroll;
+}
+.collapsible p.expand {
+    height: 20rem;
+}
+.collapsible p::-webkit-scrollbar {
+    width: .5rem;
+    border-radius: .25rem;
+    background: #80808010;
+}
+.collapsible p::-webkit-scrollbar-thumb {
+    border-radius: .25rem;
+    background: #80808020;
+}
+.fade-wrapper {
+    width: 100%;
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, #ffffff10, #ffffff);
+    backdrop-filter: blur(.15rem);
+}
+button.read-more-button {
+    padding: .75rem 1.25rem;
+    border-radius: 2rem;
+    border: 2px solid #808080;
+    background: #ffffff;
+    display: block;
+    margin-block: 2rem;
+    margin-inline: auto;
+    font-size: .95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .5s ease;
+    transform: scale(0.95);
+}
+button.read-more-button:hover {
+    transform: scale(1);
+}
+.see {
+    border: 1px solid red;
+}
+.d-none {
+    display: none !important;
+}

@@ -1,0 +1,32 @@
+{
+  "name": "scrum-board",
+  "version": "1.0.0",
+  "description": "Manage project tasks more productively",
+  "main": "app/js/index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/nathanielanum13/scrum-board.git"
+  },
+  "author": "Nathaniel Anum Adjah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/nathanielanum13/scrum-board/issues"
+  },
+  "homepage": "https://gitlab.com/nathanielanum13/scrum-board#readme",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }, 
+  "keywords": [
+    "scrum",
+    "board",
+    "todo",
+    "organise",
+    "management",
+    "javascript",
+    "js",
+    "html"
+  ]
+}

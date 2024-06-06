@@ -1,0 +1,54 @@
+{
+  "services": [
+    {
+      "name": "Comminion Service",
+      "time": "08:15",
+      "day": "SUNDAY",
+      "numberOfSeats": "20",
+      "durationInMinutes": "30",
+      "createdOn": "1",
+      "updateOn": "1",
+      "id": 5
+    },
+    {
+      "name": "Cathechist Sendoff",
+      "time": "10:00",
+      "day": "SUNDAY",
+      "numberOfSeats": "100",
+      "durationInMinutes": "120",
+      "createdOn": "1",
+      "updateOn": "1",
+      "id": 6
+    },
+    {
+      "name": "Demo Service",
+      "time": "09:00",
+      "day": "WEDNESDAY",
+      "numberOfSeats": "20",
+      "durationInMinutes": "120",
+      "createdOn": "1",
+      "updateOn": "1",
+      "id": 7
+    },
+    {
+      "name": "Monday Service",
+      "time": "08:15",
+      "day": "MONDAY",
+      "numberOfSeats": "10",
+      "durationInMinutes": "60",
+      "createdOn": "1",
+      "updateOn": "1",
+      "id": 8
+    },
+    {
+      "name": "Monday",
+      "time": "05:55",
+      "day": "MONDAY",
+      "numberOfSeats": "100",
+      "durationInMinutes": "90",
+      "createdOn": "1",
+      "updateOn": "1",
+      "id": 9
+    }
+  ]
+}

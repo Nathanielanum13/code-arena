@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Chunking Example</title>
+</head>
+<body>
+    <h1>Video Upload</h1>
+    <input type="file" id="video" accept="video/*" />
+
+    <section style="margin-top: 1rem;">
+        <div id="videoSourceWrapper">
+            <video style="width: 30%; aspect-ratio: 9/5;" controls>
+                <source id="videoSource"/>
+            </video>
+        </div>
+    </section>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

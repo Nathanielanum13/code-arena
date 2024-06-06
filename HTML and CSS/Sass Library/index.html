@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard.css</title>
+    <link rel="stylesheet" href="dist/css/index.css">
+    <style>
+        *, ::after, ::before {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            height: 100vh;
+            overflow: hidden scroll;
+            display: grid;
+            place-items: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .see {
+            border: 1px solid red;
+        }
+        .layout {
+            width: clamp(15rem, 50%, 50rem);
+            padding: 5rem;
+            position: relative;
+        }
+        .tag::after {
+            content: attr(data-class);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -120%);
+            background-color: #1a1919;
+            color: #fff;
+            border-radius: .25rem;
+            padding: .5rem 1rem;
+        }
+        .layout > * {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .5rem;
+            width: 100%;
+            padding: 2.5rem;
+        }
+        .layout-row-30-70 > * > *:first-child {
+            flex-grow: 0;
+            width: calc(0.3 * 100%);
+            padding: 1.25rem;
+        }
+        .layout-row-30-70 > * > *:last-child {
+            flex-grow: 0;
+            width: calc(0.7 * 100%);
+            padding: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout layout-col-2 layout-row-30-70 tag see" data-class=".layout .layout-col-2 .layout-row-30-70">
+        <div class="see">
+            <span class="see">A</span>
+            <span class="see">B</span>
+        </div>
+        <div class="see">
+            <span class="see">A</span>
+            <span class="see">B</span>
+        </div>
+    </div>
+</body>
+</html>

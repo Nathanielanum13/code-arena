@@ -1,0 +1,80 @@
+meta {
+  name: Create Site Now
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:5566/build
+  body: json
+  auth: none
+}
+
+headers {
+  traceid: ad26575e-bd62-4a52-9cbe-5b2dc7bc4e44
+}
+
+body:json {
+  {
+    "lang": "en",
+    "head": {
+      "link[src='localhost:5566/style.css']": "",
+      "<>": [
+        {
+          "meta[name='viewport'][content='width=device-width, initial-scale=1.0']": ""
+        },
+        {
+          "meta[charset='UTF-8']": ""
+        },
+        {
+          "style": ".foo { background-color: blue; padding: 1rem; color: #fff; font-weight: bold; font-size: 1rem; font-family: ubuntu; position: static; top: 0 }"
+        }
+      ]
+    },
+    "body": {
+      "div.foo.bar.mar#a[data-foo='what.css'][data-nathaniel='henry']": "Welcome to my site",
+      "ul": [
+        {
+          "li": {
+            "innerText": "Dede Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum at tempore facilis qui reiciendis neque, maiores quasi? Ducimus laudantium inventore incidunt? Omnis animi ab laborum itaque, odio sapiente quia architecto iure laboriosam dicta est deserunt optio sed, nam ipsa repudiandae cumque earum explicabo ex aspernatur? Veniam earum totam atque deserunt iste accusantium deleniti accusamus corrupti rerum necessitatibus expedita beatae culpa molestiae nam, id eius. Laborum quaerat error natus, nesciunt earum placeat at dolore minus sunt commodi quae facilis ad, neque ullam laudantium impedit, perspiciatis id dolor aperiam? Aut harum in cupiditate vitae aliquid amet id ad reprehenderit! Possimus, pariatur. Fuga hic omnis exercitationem incidunt in. Rerum, optio. Mollitia fugiat voluptate rerum odio repudiandae qui adipisci sint nostrum distinctio nemo est aliquam nihil tempora fuga, minus cupiditate culpa voluptatem dicta quae magnam natus dignissimos itaque eligendi. Molestiae dolores veniam et quasi non quidem corrupti assumenda, hic cumque qui dignissimos ipsa repudiandae ab quae numquam! Ex, hic saepe non molestiae recusandae eos laudantium dicta adipisci, voluptatibus placeat blanditiis nihil quia impedit eaque, velit sit. Dolor, quasi nobis? Libero sint mollitia nisi repellat voluptates. Adipisci sequi aliquid delectus provident illum incidunt voluptate ut amet, explicabo dolore blanditiis ipsum enim non perferendis assumenda veniam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum at tempore facilis qui reiciendis neque, maiores quasi? Ducimus laudantium inventore incidunt? Omnis animi ab laborum itaque, odio sapiente quia architecto iure laboriosam dicta est deserunt optio sed, nam ipsa repudiandae cumque earum explicabo ex aspernatur? Veniam earum totam atque deserunt iste accusantium deleniti accusamus corrupti rerum necessitatibus expedita beatae culpa molestiae nam, id eius. Laborum quaerat error natus, nesciunt earum placeat at dolore minus sunt commodi quae facilis ad, neque ullam laudantium impedit, perspiciatis id dolor aperiam? Aut harum in cupiditate vitae aliquid amet id ad reprehenderit! Possimus, pariatur. Fuga hic omnis exercitationem incidunt in. Rerum, optio. Mollitia fugiat voluptate rerum odio repudiandae qui adipisci sint nostrum distinctio nemo est aliquam nihil tempora fuga, minus cupiditate culpa voluptatem dicta quae magnam natus dignissimos itaque eligendi. Molestiae dolores veniam et quasi non quidem corrupti assumenda, hic cumque qui dignissimos ipsa repudiandae ab quae numquam! Ex, hic saepe non molestiae recusandae eos laudantium dicta adipisci, voluptatibus placeat blanditiis nihil quia impedit eaque, velit sit. Dolor, quasi nobis? Libero sint mollitia nisi repellat voluptates. Adipisci sequi aliquid delectus provident illum incidunt voluptate ut amet, explicabo dolore blanditiis ipsum enim non perferendis assumenda veniam.",
+            "span": [
+              {
+                "h1": "Hello",
+                "ul": [
+                  {
+                    "li": {
+                      "innerText": "Dede",
+                      "span#foo[style='color: red']": [
+                        {
+                          "h1": "Hello"
+                        },
+                        {
+                          "h1": "Pretty"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "h1": "Pretty"
+              }
+            ]
+          }
+        },
+        {
+          "li": "Francis"
+        }
+      ],
+      "h1#foo": {
+        "span": "Call me Nat",
+        "innerHTML": " Hello Foo",
+        "innerText": " Pardon me"
+      },
+      "button": {
+        "innerHTML": "Nathaniel",
+        "onClick": "alert('Hello')"
+      }
+    }
+  }
+}

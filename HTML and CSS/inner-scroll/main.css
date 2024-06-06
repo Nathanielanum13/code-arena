@@ -1,0 +1,42 @@
+:root {
+    --left: 50%;
+    --top: 50%;
+}
+
+*, ::after, ::before {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+    border: 1px solid red;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+
+.sketch {
+    width: 700px;
+    height: 700px;
+    background-color: antiquewhite;
+    position: absolute;
+    text-align: center;
+    top: var(--top);
+    left: var(--left);
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

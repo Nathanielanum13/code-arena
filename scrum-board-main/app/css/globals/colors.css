@@ -1,0 +1,13 @@
+:root {
+    --light: hsl(0, 0%, 100%);
+    --primary: hsl(205, 73%, 55%);
+    --danger: hsl(10, 68%, 66%);
+    --warning: hsl(35, 89%, 58%);
+    --success: hsl(143, 70%, 43%);
+    --muted: hsl(0, 0%, 90%);
+    --muted-light: hsl(0, 0%, 92%);
+    --darker-color: hsl(0, 0%, 13%);
+    --dark-color: hsl(0, 0%, 19%);
+    --dark-muted: hsl(0, 0%, 46%);
+    --darker-muted: hsl(0, 0%, 36%);
+}

@@ -1,0 +1,185 @@
+/* ------------ TABLE OF CONTENT ------------ */
+/* 1. Variables ----------------------------- */
+/* 2. Resets -------------------------------- */
+/* 3. Globals ------------------------------- */
+/* 4. Card ---------------------------------- */
+/* 4. Button -------------------------------- */
+/* 5. Utility ------------------------------- */
+/* 6. Media Queries ------------------------- */
+
+
+
+/* 1. Variables ----------------------------- */
+:root {
+    --primary-clr: hsl(150, 100%, 66%);
+    --lt-primary-clr: hsl(193, 38%, 86%);
+    --neutral-clr: hsl(217, 19%, 24%);
+    --dk-neutral-clr: hsl(218, 23%, 16%);
+    --lt-neutral-clr: hsl(217, 19%, 38%);
+    --dark-clr: hsl(223, 47%, 23%);
+    --muted: hsl(224, 23%, 50%);
+
+    --sm: .25;
+    --md: calc(var(--sm) * 2);
+    --lg: calc(var(--md) * 4);
+    --xlg: calc((var(--lg) * 2) + (var(--md) * 2));
+
+    --spacing-sm: calc(var(--sm) * 1rem);
+    --spacing-md: calc(var(--md) * 1rem);
+    --spacing-lg: calc(var(--lg) * 1rem);
+    --spacing-xlg: calc(var(--xlg) * 1rem);
+
+    --mobile-viewport: 375px;
+    --desktop-viewport: 1440px;
+}
+
+/* 2. Resets -------------------------------- */
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+/* 3. Globals ------------------------------- */
+body {
+    height: 100vh;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--dark-clr);
+
+    background-color: var(--dk-neutral-clr);
+
+    display: grid;
+    place-items: center;
+}
+
+
+/* 4. Card ---------------------------------- */
+.card-container {
+    width: clamp(var(--mobile-viewport) - var(--spacing-lg), (100% / 2), 600px);
+    background-color: var(--neutral-clr);
+    border-radius: calc(var(--spacing-lg) / 2);
+    display: grid;
+    grid-template-columns: 1fr;
+    box-shadow:  var(--spacing-md) var(--spacing-md) var(--spacing-lg) hsl(0 0% 0% / .1);
+    padding: clamp(var(--spacing-lg) - var(--spacing-md), (var(--spacing-lg) - var(--spacing-md)) + 1vw, 5rem);
+    color: var(--lt-primary-clr);
+    text-align: center;
+    position: relative;
+}
+
+.card-container .title {
+    text-transform: uppercase;
+    color: var(--primary-clr);
+    font-size: calc(var(--spacing-md) + var(--spacing-sm));
+    letter-spacing: var(--spacing-sm);
+}
+
+.card-container blockquote {
+    margin-top: calc(var(--spacing-lg) - var(--spacing-md));
+    font-size: clamp(var(--spacing-lg) / 2, (var(--spacing-lg) / 2) + 1vw, var(--spacing-lg) - var(--spacing-sm));
+}
+
+.card-container .pattern-divider {
+    margin-block: var(--spacing-lg);
+    background: url("images/pattern-divider-desktop.svg") no-repeat 50% 50%;
+    background-size: contain;
+    height: var(--spacing-lg);
+}
+
+.card-container button {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 4. Button -------------------------------- */
+.button {
+    width: calc(var(--spacing-xlg) - var(--spacing-lg) + var(--spacing-md));
+    height: calc(var(--spacing-xlg) - var(--spacing-lg) + var(--spacing-md));
+    border-radius: 50%;
+    background-color: var(--primary-clr);
+    color: var(--lt-neutral-clr);
+    font-size: 1.05rem;
+    outline: none;
+    border: 0;
+    box-shadow:  0 var(--spacing-lg) var(--spacing-lg) hsl(0 0% 0% / .1);
+    cursor: pointer;
+    transition: all .5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.button:after {
+    content: "";
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: var(--primary-clr);
+    border-radius: inherit;
+    filter: blur(calc(var(--spacing-lg) - var(--spacing-md)));
+    opacity: 0;
+}
+.button:hover::after {
+    opacity: 1;
+    transition: all .5s ease;
+}
+.button:not(:hover)::after {
+    transition: all .5s ease;
+}
+
+
+
+/* 5. Utility ------------------------------- */
+.fw-700 {
+    font-weight: 700;
+}
+.fw-900 {
+    font-weight: 900;
+}
+.mt-1 {
+    margin-top: calc(var(--spacing-lg) / 2);
+}
+.mt-2 {
+    margin-top: var(--spacing-lg);
+}
+.mb-1 {
+    margin-bottom: calc(var(--spacing-lg) / 2);
+}
+.mb-2 {
+    margin-bottom: var(--spacing-lg);
+}
+.px-md {
+    padding-inline: var(--spacing-md);
+}
+.see {
+    border: 1px solid red;
+}
+
+
+/* 6. Media Queries ------------------------- */
+@media screen and (max-width: 375px) {
+    .attribution {
+        margin-block: var(--spacing-lg);
+    }
+    .mb-sm-2 {
+        margin-bottom: var(--spacing-lg);
+    }
+    .card-container .pattern-divider {
+        background: url("images/pattern-divider-mobile.svg") no-repeat 50% 50%;
+        background-size: contain;
+        height: var(--spacing-lg);
+    }
+}
+
+@media screen and (max-height: 715px) {
+    .attribution {
+        margin-block: var(--spacing-lg);
+    }
+}

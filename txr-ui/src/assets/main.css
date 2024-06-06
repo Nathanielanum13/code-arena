@@ -1,0 +1,42 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.br {
+  opacity: .5;
+  background-color: #80808020;
+  width: 100%;
+  height: 1px;
+}
+
+hr {
+  opacity: .25
+}
+
+.page-section {
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+label, .label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+    padding: .75rem 1rem;
+    margin-bottom: 1rem;
+    width: min(600px, 100%);
+    border: 1px solid #80808050;
+    border-radius: .25rem;
+    font-size: 1rem;
+}
